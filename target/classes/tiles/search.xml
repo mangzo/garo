@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	  <definition name="/search/company" extends="baseLayout">
+         <put-attribute name="title" value="회사 검색" />
+         <put-attribute name="body" value="/WEB-INF/views/search/company.jsp" />
+      </definition>
+      <definition name="/search/company_detail" extends="baseLayout">
+         <put-attribute name="title" value="회사 소개" />
+         <put-attribute name="body" value="/WEB-INF/views/search/company_detail.jsp" />
+      </definition>
+      <definition name="/search/company_list" extends="baseLayout">
+         <put-attribute name="title" value="기업리스트 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/search/company_list.jsp" />
+      </definition>
+      <definition name="/search/company_apply" extends="baseLayout">
+         <put-attribute name="title" value="기업리스트 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/search/company_apply.jsp" />
+      </definition>
+</tiles-definitions>
+
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	  <definition name="/member/memLoginForm" extends="baseLayout">
+         <put-attribute name="title" value="로그인 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/member/memLoginForm.jsp" />
+      </definition>  
+      
+      <definition name="/member/memSubmit" extends="baseLayout">
+         <put-attribute name="title" value="회원가입 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/member/memSubmit.jsp" />
+      </definition>
+      <definition name="/member/mypage/profile" extends="baseLayout">
+         <put-attribute name="title" value="마이 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/member/mypage/profile.jsp" />
+      </definition>
+      <definition name="/member/mypage/cmp_profile" extends="baseLayout">
+         <put-attribute name="title" value="기업 마이 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/member/mypage/cmp_profile.jsp" />
+      </definition>
+</tiles-definitions>
+
+

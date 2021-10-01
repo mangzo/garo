@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	  <definition name="/board/faq" extends="baseLayout">
+         <put-attribute name="title" value="자주 묻는 질문" />
+         <put-attribute name="body" value="/WEB-INF/views/board/faq.jsp" />
+      </definition>  
+      <definition name="/board/question_form" extends="baseLayout">
+         <put-attribute name="title" value="1:1문의" />
+         <put-attribute name="body" value="/WEB-INF/views/board/question_form.jsp" />
+      </definition> 
+      <definition name="/board/notice/page" extends="baseLayout">
+         <put-attribute name="title" value="공지게시판 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/board/notice/page.jsp" />
+      </definition> 
+      <definition name="/board/question_page" extends="baseLayout">
+         <put-attribute name="title" value="문의 내역" />
+         <put-attribute name="body" value="/WEB-INF/views/board/question_page.jsp" />
+      </definition> 
+      <definition name="/board/cmp_page" extends="baseLayout">
+         <put-attribute name="title" value="사이트 소개" />
+         <put-attribute name="body" value="/WEB-INF/views/board/cmp_page.jsp" />
+      </definition> 
+</tiles-definitions>
+
+

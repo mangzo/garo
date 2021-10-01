@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	  <definition name="/company/cmpLoginForm" extends="baseLayout">
+         <put-attribute name="title" value="기업 로그인 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/company/cmpLoginForm.jsp" />
+      </definition>  
+      
+      <definition name="/company/cmpSubmit" extends="baseLayout">
+         <put-attribute name="title" value="기업회원가입 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/company/cmpSubmit.jsp" />
+      </definition>
+      <definition name="/company/cmpPage" extends="baseLayout">
+         <put-attribute name="title" value="공고 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/company/cmpPage.jsp" />
+         
+      </definition>
+    
+</tiles-definitions>
+
+
