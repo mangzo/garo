@@ -22,7 +22,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
-import com.garo.goods.vo.ImageFileVO;
+import com.garo.www.goods.vo.ImageFileVO;
 
 public abstract class BaseController  {
 	private static final String CURR_IMAGE_REPO_PATH = "C:\\shopping\\file_repo";

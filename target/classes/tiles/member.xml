@@ -11,15 +11,47 @@
       <definition name="/member/memSubmit" extends="baseLayout">
          <put-attribute name="title" value="회원가입 페이지" />
          <put-attribute name="body" value="/WEB-INF/views/member/memSubmit.jsp" />
+        
       </definition>
+      
+      
+      <!-- 개인용 -->
       <definition name="/member/mypage/profile" extends="baseLayout">
          <put-attribute name="title" value="마이 페이지" />
          <put-attribute name="body" value="/WEB-INF/views/member/mypage/profile.jsp" />
       </definition>
-      <definition name="/member/mypage/cmp_profile" extends="baseLayout">
-         <put-attribute name="title" value="기업 마이 페이지" />
-         <put-attribute name="body" value="/WEB-INF/views/member/mypage/cmp_profile.jsp" />
+      <definition name="/member/mypage/matching" extends="baseLayout">
+         <put-attribute name="title" value="매칭 현황 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/member/mypage/matching.jsp" />
       </definition>
+      
+      
+      <!--기업용  -->
+      <definition name="/member/cmp_mypage/cmp_profile" extends="baseLayout">
+         <put-attribute name="title" value="기업 마이 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/member/cmp_mypage/cmp_profile.jsp" />
+      </definition>
+      <definition name="/member/cmp_mypage/cmp_matching" extends="baseLayout">
+         <put-attribute name="title" value="기업 매칭현황 페이지" />
+         <put-attribute name="body" value="/WEB-INF/views/member/cmp_mypage/cmp_matching.jsp" />
+      </definition>
+      
+      <!-- 관리자용 -->
+      
+      <definition name="/member/admin/companyList" extends="baseLayout">
+         <put-attribute name="title" value="기업회원관리" />
+         <put-attribute name="body" value="/WEB-INF/views/member/admin/companyList.jsp" />
+      </definition>
+      <definition name="/member/admin/memberList" extends="baseLayout">
+         <put-attribute name="title" value="개인회원관리" />
+         <put-attribute name="body" value="/WEB-INF/views/member/admin/memberList.jsp" />
+      </definition>
+      <definition name="/member/admin/matchingList" extends="baseLayout">
+         <put-attribute name="title" value="매칭승인" />
+         <put-attribute name="body" value="/WEB-INF/views/member/admin/matchingList.jsp" />
+      </definition>
+      
+      
 </tiles-definitions>
 
 

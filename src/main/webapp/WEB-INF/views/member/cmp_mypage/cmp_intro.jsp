@@ -26,7 +26,7 @@
                         <form action="" method="">
                             <div class="profiel-header">
                                 <h3>
-                                    <b>공지사항 작성 </b><br>
+                                    <b>회사 소개글 작성 </b><br>
                                     <small></small>
                                 </h3>
                                 <hr>

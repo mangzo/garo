@@ -1,11 +1,13 @@
 package com.garo.www.member.controller;
 
+import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,4 +25,7 @@ public interface MemberController {
 	public ResponseEntity overlapped(String id, HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public String memsubmit(HttpServletRequest request, HttpServletResponse response)throws Exception;
 	public String memLoginform(HttpServletRequest request, HttpServletResponse response)throws Exception;
-}
+	
+	}
+
+

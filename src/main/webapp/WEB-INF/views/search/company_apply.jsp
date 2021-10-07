@@ -6,150 +6,140 @@
 
 <c:set var="contextPath"  value="${pageContext.request.contextPath}" />
 
+	
 <body>
 	<!-- property area -->
-	<div class="page-head"> 
-            <div class="container">
-                <div class="row">
-                    <div class="page-head-content">
-                        <h1 class="page-title"> <span class="orange strong"></span></h1>               
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End page header --> 
-        <div class="content-area user-profiel" style="background-color: #FCFCFC;">&nbsp;
-            <div class="container">   
-                <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1 profiel-container">
-
-                        <form action="" method="">
-                            <div class="profiel-header">
-                                <h3>
-                                    <b>매칭 신청 </b><br>
-                                    <small></small>
-                                </h3>
-                                <hr>
-                            </div>
+	<div class="page-head">
+		<div class="container">
+			<div class="row">
+				<div class="page-head-content">
+					<h1 class="page-title">
+						<span class="orange strong"></span>
+					</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End page header -->
 
 
+	<div class="content-area user-profiel"
+		style="background-color: #FCFCFC;">
+		&nbsp;
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1 profiel-container">
+					<div class="profiel-header">
+						<h3>
+							<b>매칭 신청 </b><br> <small></small>
+						</h3>
+						<hr>
+					</div>
+					<form action="${contextPath }/matching/matchingRequest.do">
+						<div class="col-sm-3 padding-top-25">
 
-                                <div class="col-sm-3 padding-top-25" >
+							<div class="form-group"
+								style="padding: 10px 0 0; margin: 10px 0 0; width: 500px;">
+								<label>신청인 이메일</label> <input name="mem_email" type="text" class=""
+									value="${mem_email }" readonly>
+							</div>
+							<div class="form-group"
+								style="padding: 10px 0 0; margin: 10px 0 0; width: 500px;">
+								<label>이용하는 회사 아이디</label> <input name="cmp_id" type="text" class=""
+									value="${companyVO.cmp_id }" readonly>
+							</div>
+							<div class="form-group"
+								style="padding: 10px 0 0; margin: 10px 0 0; width: 500px;">
+								<label>원하는 서비스</label>
 
-                                    <div class="form-group" style="padding: 10px 0 0; margin: 10px 0 0;width: 500px;">
-                                        <label>신청인</label>
-                                        <input name="firstname" type="text" class="form-control" placeholder="신청인의 성함을 입력해주세요">
-                                    </div>
-                                   <div class="form-group" style="padding: 10px 0 0; margin: 10px 0 0;width: 500px;">
-                                     <label>원하는 서비스</label>
-                                    <div class="form-check">
-  										<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  										<label class="form-check-label" for="flexCheckDefault">
-   											 이동지원
- 										 </label>
+								<c:if test="${companyVO.service=='move'}">
+
+									<div class="form-group"
+										style="padding: 10px 0 0; margin: 10px 0 0; width: 500px;">
+										<input name="service" type="text" class="form-control"
+											value="이동지원" readonly>
 									</div>
-									<div class="form-check">
-									  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-									  <label class="form-check-label" for="flexCheckChecked">
-									    식사지원
-									  </label>
-									</div>
-									<div class="form-check">
-									  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-									  <label class="form-check-label" for="flexCheckChecked">
-									    주거편의
-									  </label>
-									</div>
-									</div>
-									 <div class="form-group" style="padding: 10px 0 0; margin: 10px 0 0;width: 500px;">
-                                        <label>원하는 날짜</label>
-                                        <input name="lastname" type="text" class="form-control" placeholder="서비스를 원하는 날짜를 입력해주세요">
-                                    </div> 
-                                    <div class="form-group" style="padding: 10px 0 0; margin: 10px 0 0;width: 500px;">
-                                        <label>원하는 시간대</label>
-                                        <input name="lastname" type="text" class="form-control" placeholder="서비스를 원하는 시간대를 입력해주세요">
-                                    </div> 
-                                     <div class="form-group" style="padding: 10px 0 0; margin: 10px 0 0;width: 500px;">
-                                        <label>원하는 지역</label>
-                                        <input name="lastname" type="text" class="form-control" placeholder="서비스를 원하는 지역을 입력해주세요">
-                                    </div> 
-                                    <div class="form-group" style="padding: 10px 0 0; margin: 10px 0 0; width: 800px; height: 400px; position: relative; ">
-                                        <label>기타 추가사항</label>
-                                        <br>
-                                       <!--  <input name="text" type="text" class="form-control" placeholder=""   > -->
-                                        <textarea cols="100" rows="30" name="content"
-                                         style=" resize: horizontal;padding: 10px 0 0; margin: 10px 0 0; width: 800px; height: 300px; overflow: AUTO;" ></textarea>
-                                    </div> 
-                                    <div class="form-group" style="padding: 10px 0 0; margin: 10px 0 0;width: 500px;">
-                                        <label class="input-group-text" for="inputGroupFile01">첨부파일</label>
- 										 <input type="file" class="form-control" id="inputGroupFile01">
-                                    </div> 
-                                    
-                                   
-                                </div>
-                              <!--   <div class="col-sm-3 padding-top-25">
-                                    <div class="form-group">
-                                        <label>비밀번호 <small>(필수입력)</small></label>
-                                        <input name="Password" type="password" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>비밀번호 확인 <small>(필수입력)</small></label>
-                                        <input type="password" class="form-control">
-                                    </div>
-                                </div>   -->
 
-                            </div>
+								</c:if>
+								<c:if test="${companyVO.service=='food'}">
+									<div class="form-group"
+										style="padding: 10px 0 0; margin: 10px 0 0; width: 500px;">
+										<input name="service" type="text" class="form-control"
+											value="식사지원" readonly>
+									</div>
+								</c:if>
+								<c:if test="${companyVO.service=='house'}">
+									<div class="form-group"
+										style="padding: 10px 0 0; margin: 10px 0 0; width: 500px;">
+										<input name="service" type="text" class="form-control"
+											value="주거지원" readonly>
+									</div>
+								</c:if>
+
+
+							</div>
+							<div class="form-group"
+								style="padding: 10px 0 0; margin: 10px 0 0; width: 500px;">
+								<label>원하는 날짜 &nbsp; (2021-10-13 형식으로 입력하시오)</label> <input id="service_date" name="service_date"  type="text"
+									class="form-control" placeholder="서비스를 원하는 날짜를 입력해주세요"
+									name="service_date">
+							</div>
+							<div class="form-group"
+								style="padding: 10px 0 0; margin: 10px 0 0; width: 500px;">
+								<label>원하는 시간대 &nbsp; (09-13 형식으로 입력하시오)</label> <input  type="text"
+									class="form-control" placeholder="서비스를 원하는 시간대를 입력해주세요"
+									name="service_time">
+							</div>
 							
-                            <div class="clear">
-                           <br>
-                                <hr>
-                                <br>
-                                
-                              <!--   <div class="col-sm-5 col-sm-offset-1">
-                                    <div class="form-group">
-                                        <label>Facebook :</label>
-                                        <input name="Facebook" type="text" class="form-control" placeholder="https://facebook.com/user">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Twitter :</label>
-                                        <input name="Twitter" type="text" class="form-control" placeholder="https://Twitter.com/@user">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Website :</label>
-                                        <input name="website" type="text" class="form-control" placeholder="https://yoursite.com/">
-                                    </div>
-                                </div>  
+							<div class="form-group">
+							<br>
+							<label>원하는 장소</label>
+							
+								<select id="lunchBegins" class="selectpicker" name="service_loc"
+									data-live-search="true" data-live-search-style="begins"
+									title="시/도를 입력하세요">
+									<option>대전</option>
+									<option>서울</option>
+									<option>경기도</option>
+									<option>부산</option>
+									<option>울산</option>
+									<option>대구</option>
+									<option>인천</option>
+									<option>광주</option>
+									<option>세종</option>
+									<option>강원</option>
+									<option>충북</option>
+									<option>충남</option>
+									<option>전북</option>
+									<option>전남</option>
+									<option>경북</option>
+									<option>경남</option>
+									<option>제주</option>
+								</select>
+							</div>
+							<div class="form-group"
+								style="padding: 10px 0 0; margin: 10px 0 0; width: 800px; height: 400px; position: relative;">
+								<label>기타 추가사항</label> <br>
+								<!--  <input name="text" type="text" class="form-control" placeholder=""   > -->
+								<textarea cols="100" rows="30"
+									style="resize: horizontal; padding: 10px 0 0; margin: 10px 0 0; width: 800px; height: 300px; overflow: AUTO;"
+									name="etc"></textarea>
+							</div>
+							<div class="form-group"
+								style="padding: 10px 0 0; margin: 10px 0 0; width: 500px;">
+								<label class="input-group-text" for="inputGroupFile01">첨부파일(미구현)</label>
+								<input type="file" class="form-control" id="inputGroupFile01">
+							</div>
+							<div class="col-sm-5 col-sm-offset-1">
+								<input type='submit' class='btn btn-finish btn-primary'
+									value='제출하기' />
+							</div>
 
-                                <div class="col-sm-5">
-                                    <div class="form-group">
-                                        <label>Public email :</label>
-                                        <input name="p-email" type="email" class="form-control" placeholder="p-email@rmail.com">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Phone :</label>
-                                        <input name="Phone" type="text" class="form-control" placeholder="+1 9090909090">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>FAX :</label>
-                                        <input name="FAX" type="text" class="form-control" placeholder="+1 9090909090">
-                                    </div> -->
-                                </div>
- 
-                           
-                           
-                            <div class="col-sm-5 col-sm-offset-1">
-                                <br>
-                                <input type='button' class='btn btn-finish btn-primary' name='finish' value='제출하기' />
-                                  
-                            </div>
-                            <br>
-                          
-                    </form>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
-                </div>
-            </div><!-- end row -->
-
-        </div>
-    </div>
-	
 </body>

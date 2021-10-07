@@ -33,10 +33,10 @@ request.setCharacterEncoding("UTF-8");
 						src="${contextPath}/resources/assets/img/realimg/sunflower 2.jpg"
 						alt="The Last of us">
 				</div>
-				<div class="item">
+	 			<div class="item">
 					<img src="${contextPath}/resources/assets/img/realimg/yellow.jpg"
 						alt="GTA V">
-				</div>
+				</div> 
 			</div>
 		</div>
 		<div class="slider-content">
@@ -79,8 +79,6 @@ request.setCharacterEncoding("UTF-8");
 									<option>경북</option>
 									<option>경남</option>
 									<option>제주</option>
-
-
 								</select>
 							</div>
 							<div class="form-group">
@@ -89,18 +87,12 @@ request.setCharacterEncoding("UTF-8");
 									<option value="move">이동지원</option>
 									<option value="food">식사지원</option>
 									<option value="house">주거편의</option>
-
 								</select>
 							</div>
 							<div class="form-group"></div>
 							<button class="btn search-btn" type="submit">
 								<i class="fa fa-search"></i>
 							</button>
-
-
-
-
-
 						</form>
 					</div>
 				</div>

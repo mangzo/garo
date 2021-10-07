@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="notice">
+	<!-- 리절트 맵 정의 -->
+<!-- <resultMap id="noticeResult" type="NoticeVO"> -->
+<!-- 	<result property="ntc_seq" column="ntc_seq" /> -->
+<!--     <result property="ntc_name" column="ntc_name" /> -->
+<!--     <result property="ntc_title" column="ntc_title" /> -->
+<!--     <result property="ntc_content" column="ntc_content" /> -->
+<!--     <result property="ntc_hit" column="ntc_hit" /> -->
+<!--     <result property="ntc_date" column="ntc_date" /> -->
+<!--     <result property="ntc_attach" column="ntc_attach" /> -->
+<!--   </resultMap>  -->
+
+	
+	<select id="selectNoticeList" parameterType="com.garo.www.notice.vo.NoticeVO" resultType="com.garo.www.notice.vo.NoticeVO">
+		SELECT
+			NTC_SEQ
+			, NTC_NAME
+			, NTC_TITLE
+			, NTC_CONTENT
+			, NTC_HIT
+			, NTC_DATE
+			, NTC_ATTACH
+	
+		FROM NOTICE
+		
+		ORDER BY NTC_SEQ DESC
+	</select>
+	
+	
+	<insert id="insertNewNotice" parameterType="com.garo.www.notice.vo.NoticeVO" >
+	/* notice.insertNewNotice */
+		INSERT INTO NOTICE
+		(
+		    NTC_SEQ
+		    , NTC_NAME
+		    , NTC_TITLE
+		    , NTC_CONTENT
+		    , NTC_HIT
+		    , NTC_DATE
+		    , NTC_ATTACH
+		)
+		VALUES
+		(
+		    (SELECT NVL(MAX(NTC_SEQ), 0)+1 FROM NOTICE)
+		    , #{ntc_name}
+		    , #{ntc_title}
+		    , #{ntc_content}
+		    , 0
+		    , SYSDATE
+		    , null
+		)
+	
+	</insert>
+	
+	<select id="selectNewntc_seq" resultType="int" >
+	<![CDATA[
+	SELECT nvl(max(ntc_seq, 0) + 1 from notice
+	]]>
+	</select>
+	
+	<select id="selectNotice" resultType="com.garo.www.notice.vo.NoticeVO" parameterType="int">
+	<![CDATA[
+	SELECT * FROM NOTICE
+	WHERE ntc_seq = #{ntc_seq}
+	]]>
+	</select>
+	
+	<!-- 게시글 상세정보 -->
+	<select id="viewNotice" resultType="com.garo.www.notice.vo.NoticeVO" parameterType="int">
+	<![CDATA[
+	 SELECT ntc_seq, ntc_title, ntc_name, ntc_content, ntc_date
+	 FROM NOTICE
+	 WHERE ntc_seq = #{ntc_seq} 
+	]]>
+	</select>
+	
+	<update id="updateNotice" parameterType="com.garo.www.notice.vo.NoticeVO">
+	update notice
+	set ntc_title = #{ntc_title},
+		ntc_content = #{ntc_content},
+		ntc_name = #{ntc_name}
+	where ntc_seq = #{ntc_seq}
+	</update>
+	
+	
+	
+	
+	<update id="updateMatching" parameterType="com.garo.www.notice.vo.NoticeVO">
+	update matching
+	set state = '승인'
+	where mch_code = #{mch_code}
+	</update>
+	
+	
+	
+	
+	<delete id="deleteNotice" parameterType="com.garo.www.notice.vo.NoticeVO">
+	
+		delete from notice
+		where ntc_seq = #{ntc_seq}
+		
+	</delete>
+	
+</mapper>

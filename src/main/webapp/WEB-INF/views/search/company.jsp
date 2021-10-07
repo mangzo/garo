@@ -78,7 +78,7 @@
                                         </div>
                                     </fieldset>
 
-                                    <fieldset class="padding-5">
+                                   <!--  <fieldset class="padding-5">
                                         <div class="row">
                                             <div class="col-xs-6">
                                                 <label for="price-range">가격대별:</label>
@@ -147,7 +147,7 @@
                                         </div>
                                     </fieldset>
 
-                                   
+                                    -->
 
                                     <fieldset >
                                         <div class="row">
@@ -162,24 +162,24 @@
 
                         <div class="panel panel-default sidebar-menu wow fadeInRight animated">
                             <div class="panel-heading">
-                                <h3 class="panel-title">연계 페이지</h3>
+                                <!-- <h3 class="panel-title">연계 페이지</h3> -->
                             </div>
                             <div class="panel-body recent-property-widget" style="padding: 120px 0 0 ">
                                         <ul>
                                         <li>
-                                            <div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
+                                           <%--  <div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
                                                 <a href="single.html"><img src="${contextPath}/resources/assets/img/demo/small-property-2.jpg"></a>
                                                 <span class="property-seeker">
                                                     <b class="b-1">A</b>
                                                     <b class="b-2">S</b>
                                                 </span>
-                                            </div>
+                                            </div> --%>
                                             <div class="col-md-8 col-sm-8 col-xs-8 blg-entry" >
                                                 <h6> <a href="single.html"> </a></h6>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="col-md-3 col-sm-3  col-xs-3 blg-thumb p0">
+                                            <%-- <div class="col-md-3 col-sm-3  col-xs-3 blg-thumb p0">
                                                 <a href="single.html"><img src="${contextPath}/resources/assets/img/demo/small-property-1.jpg"></a>
                                                 <span class="property-seeker" style="padding-top: 50px">
                                                     <b class="b-1">A</b>
@@ -213,7 +213,7 @@
                                             </div>
                                             <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
                                                 <h6> <a href="single.html">우리동네 맘시터 현황 </a></h6>
-                                            </div>
+                                            </div> --%>
                                         </li>
 
                                     </ul>

@@ -2,6 +2,27 @@
 	pageEncoding="utf-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
+
+
+<script>
+
+function submit(){
+	
+	console.log("ASDFDSAFSA")
+	
+	frm.action ="${contextPath}/search/apply"
+	
+	frm.submit;
+}
+
+
+
+</script>
+
+
+
+
 </head>
 <body>
 	<div class="page-head">
@@ -20,41 +41,74 @@
 		<div class="container">
 			<div class="row">
 				<div class="blog-lst col-md-9">
-					
+
 					<c:if test="${companyVOList == '[]'}">
 						데이터가 없습니다.
 					</c:if>
-				
-					<c:forEach var="companyVO" items="${companyVOList}"
-						varStatus="status">
-						
-						<table>
-							<tr>
-								<td>${companyVO.name }</td>
-
-
-
-							</tr>
-							<tr>
-								<td>${companyVO.addr }</td>
-
-
-							</tr>
-							<tr>
-								<td>${companyVO.office_no1 }</td>
-							</tr>
-							<tr>
-								<td>${companyVO.addr_detail }</td>
-							</tr>
-
-						</table>
-
-
-					</c:forEach>
-
-
-
 					
+					
+					
+					<form action="${contextPath }/search/apply" method="get">
+
+
+						<c:forEach var="companyVO" items="${companyVOList}"
+							varStatus="status">
+
+							<table>
+								<tr >
+								<td>회사명</td>
+									<td><input type="text" name="name" value="${companyVO.name }" readonly></td>
+
+
+
+								</tr>
+								
+								<tr>
+								<td>회사아이디</td>
+									<td><input type="text" name="cmp_id" value="${companyVO.cmp_id }" readonly></td>
+								</tr>
+								
+								<tr>
+								<td>주소 </td>
+									<td><input type="text" value="${companyVO.addr }" readonly></td>
+
+
+								</tr>
+								<tr>
+								<td>사무실</td>
+									<td><input type="text"  value="${companyVO.office_no1 }" readonly></td>
+									
+								</tr>
+								<tr>
+									<td>주소 상세</td>
+									<td><input type="text"  value="${companyVO.addr_detail }" readonly></td>
+
+								</tr>
+								
+								<tr>
+								<td>지원되는 서비스 </td>
+								<td><input type="text" name="service" value="${companyVO.service }" readonly></td>
+								
+								</tr>
+								
+								
+								
+								<tr>
+								<td><input type="hidden" name="mem_email" value="${memberInfo.mem_email}"></td>
+								
+									<td><input type="submit" value="신청"></td>
+									
+								</tr>
+
+
+							</table>
+
+
+						</c:forEach>
+
+
+
+					</form>
 
 
 				</div>

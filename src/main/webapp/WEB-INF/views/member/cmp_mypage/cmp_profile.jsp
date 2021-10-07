@@ -26,13 +26,13 @@
                         <form action="" method="">
                             <div class="profiel-header">
                                 <h3>
-                                    <b>회원 정보 수정 </b><br>
+                                    <br><b>회원 정보 수정 </b>
                                     <small></small>
                                 </h3>
-                                <hr>
+                                <!-- <hr> -->
                             </div>
 
-                            <div class="clear">
+                           <%--  <div class="clear">
                                 <div class="col-sm-3 col-sm-offset-1">
                                     <div class="picture-container">
                                         <div class="picture" style="">
@@ -76,9 +76,31 @@
                                   
                                 </div>  
 
-                            </div>
-
+                            </div> --%>
 							<div class="clear">
+                                <br>
+                                <hr>
+                                <br>
+                                <div class="col-sm-5 col-sm-offset-1">
+                                    <div class="form-group">
+                                        <label>아이디 :</label>
+                                        <input name="Facebook" type="text" class="form-control" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>회사명 :</label>
+                                        <input name="Twitter" type="text" class="form-control" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>비밀번호 :</label>
+                                        <input name="website" type="text" class="form-control" placeholder="">
+                                    </div>
+                                     <div class="form-group">
+                                        <label>비밀번호 확인 :</label>
+                                        <input name="website" type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div> 
+                                </div> 
+							<!-- <div class="clear">
                                 <br>
                                 <hr>
                                 <br>
@@ -99,11 +121,11 @@
 
                                 <div class="col-sm-5">
                                     <div class="form-group">
-                                        <label>website :</label>
+                                        <label>대표번호 :</label>
                                         <input name="p-email" type="email" class="form-control" placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label>지역 :</label>
+                                        <label>우편번호 :</label>
                                         <input name="Phone" type="text" class="form-control" placeholder="">
                                     </div>
                                     <div class="form-group">
@@ -114,7 +136,7 @@
  
                             </div>
                     
-                    
+                     -->
                             <div class="clear">
                                 <br>
                                 <hr>
@@ -140,18 +162,56 @@
  
                             </div>
                     
+                    <div class="clear">
+                                <br>
+                                <hr>
+                                <br>
+                                <div class="col-sm-5 col-sm-offset-1">
+                                    <div class="form-group">
+                                        <label>대표자명 :</label>
+                                        <input name="Facebook" type="text" class="form-control" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>사업자 등록번호 :</label>
+                                        <input name="Twitter" type="text" class="form-control" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>사업자등록증 첨부파일 :</label>
+                                        <input name="website" type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>  
+								</div>
+                                  <div class="clear">
+                                <br>
+                                <hr>
+                                <br>
+                                <div class="col-sm-5 col-sm-offset-1">
+                                    <div class="form-group">
+                                        <label>회사대표번호 :</label>
+                                        <input name="p-email" type="email" class="form-control" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>우편번호 :</label>
+                                        <input name="Phone" type="text" class="form-control" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>주소 :</label>
+                                        <input name="FAX" type="text" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+ 
+                            </div>
+                    
                             <div class="col-sm-5 col-sm-offset-1">
                                 <br>
                                 <input type='button' class='btn btn-finish btn-primary' name='finish' value='정보수정' />
+                                   <input type='button' class='btn btn-finish btn-primary'  name='secession' value='회원탈퇴' />
                                   
+                                 <br>
+                            	 <br>
+                           		 <br> 
                             </div>
-                            <br>
-                             <div class="col-sm-5 col-sm-offset-1" style="margin: 0 0 0 0">
-                               
-                                <input type='button' class='btn btn-finish btn-primary'  name='secession' value='회원탈퇴' />
-                                  
-                            </div>
-                            <br>
+                            
                     </form>
 
                 </div>

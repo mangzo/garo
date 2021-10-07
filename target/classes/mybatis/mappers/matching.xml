@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="sql.matching">
+
+	<insert id="matchingAdd" parameterType="com.garo.www.matching.vo.MatchingVO">
+		insert into matching(mch_code, mem_email, cmp_id, service, service_date, service_time, service_loc, etc)
+		values(seq_matching.NEXTVAL, #{mem_email}, #{cmp_id}, #{service}, #{service_date}, #{service_time}, #{service_loc}, #{etc})
+	</insert>
+
+
+</mapper>

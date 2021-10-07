@@ -20,7 +20,7 @@
                     </div>
                     <div class="col-md-4 col-md-offset-10  col-sm-1 col-sm-offset-1  col-xs-12">
                     <c:choose>
-		     			<c:when test="${memberInfo.grade < 4}">
+		     			<c:when test="${memberInfo.grade < 3}">
 						   	<div class="button navbar-right" style="width: 500px">
 								<span>
 									<span>일반회원</span>
@@ -31,6 +31,7 @@
 								</span>
 							</div>
 			 			</c:when>
+			 		
 			 			<c:when test="${companyInfo.cmp_id !=  '' && companyInfo.cmp_id != NULL}">
 						   	<div class="button navbar-right" style="width: 500px">
 								<span>
@@ -42,7 +43,7 @@
 								</span>
 							</div>
 			 			</c:when>
-			 			<c:when test="${memberInfo.mem_email == 'admin@admin.com'}">
+			 			<c:when test="${memberInfo.grade == 3}">
 							<div class="button navbar-right" style="width: 500px">
 								<span>
 									<span>어서오세요.</span>
@@ -68,7 +69,7 @@
         </div>        
         <!--End top header -->
 		<c:choose>
-			<c:when test="${memberInfo.grade == 1}">
+			<c:when test="${memberInfo.grade < 3}">
 				<nav class="navbar navbar-default ">
 		            <div class="container">
 		                <!-- Brand and toggle get grouped for better mobile display -->
@@ -92,10 +93,10 @@
 		                            <a href="" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">마이페이지<b class="caret"></b></a>
 		                            <ul class="dropdown-menu navbar-nav">
 		                                <li>
-		                                    <a href="${contextPath}/member/mypage.do">회원 정보 수정</a>
+		                                    <a href="${contextPath}/member/profile.do">회원 정보 수정</a>
 		                                </li>
 		                                <li>
-		                                    <a href="${contextPath}/search/list.do">매칭 현황</a>
+		                                    <a href="${contextPath}/member/matching.do">매칭 현황</a>
 		                                </li>
 		                               
 		                            </ul>
@@ -104,7 +105,7 @@
 		                            <a href="" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">고객센터<b class="caret"></b></a>
 		                            <ul class="dropdown-menu navbar-nav">
 		                            	<li>
-		                                    <a href="${contextPath}/board/notice.do">공지사항</a>
+		                                    <a href="${contextPath}/notice/noticeList.do">공지사항</a>
 		                                </li>
 		                                <li>
 		                                    <a href="${contextPath}/board/qst_page.do">1:1문의</a>
@@ -120,7 +121,7 @@
 		            </div><!-- /.container-fluid -->
 		        </nav>
 			</c:when>
-			<c:when test="${memberInfo.grade == 3}">
+			<c:when test="${companyInfo.cmp_id !=  '' && companyInfo.cmp_id != NULL}">
 				<nav class="navbar navbar-default ">
 			        <div class="container">
 			            <!-- Brand and toggle get grouped for better mobile display -->
@@ -147,11 +148,9 @@
 		                                    <a href="${contextPath}/member/cmp_profile.do">회원 정보 수정</a>
 		                                </li>
 		                                <li>
-		                                    <a href="${contextPath}/search/list.do">매칭 현황</a>
+		                                    <a href="${contextPath}/member/cmp_matching.do">매칭 현황</a>
 		                                </li>
-		                                 <li>
-		                                    <a href="${contextPath}/search/detail.do">회사 소개글 작성</a>
-		                                </li>
+		                               
 		                                
 		                            </ul>
 		                        </li>
@@ -159,7 +158,7 @@
 		                            <a href="" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">고객센터<b class="caret"></b></a>
 		                            <ul class="dropdown-menu navbar-nav">
 		                            	<li>
-		                                    <a href="${contextPath}/board/notice.do">공지사항</a>
+		                                    <a href="${contextPath}/notice/noticeList.do">공지사항</a>
 		                                </li>
 		                                <li>
 		                                    <a href="${contextPath}/board/qst_page.do">1:1문의</a>
@@ -175,7 +174,7 @@
 		                </div><!-- /.container-fluid -->
      			</nav>
 			</c:when>
-			<c:when test="${memberInfo.mem_email == 'admin@admin.com'}">
+			<c:when test="${memberInfo.grade == 3}">
 				<nav class="navbar navbar-default ">
 			        <div class="container">
 			            <!-- Brand and toggle get grouped for better mobile display -->
@@ -200,27 +199,22 @@
 		                            <a href="" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200"> 관리 <b class="caret"></b></a>
 		                            <ul class="dropdown-menu navbar-nav">
 		                                <li>
-		                                    <a href="${contextPath}/search/list.do">개인 회원</a>
+		                                    <a href="${contextPath}/member/memberList.do">개인 회원</a>
 		                                </li>
 		                                <li>
-		                                    <a href="${contextPath}/search/detail.do">기업 회원</a>
+		                                    <a href="${contextPath}/member/companyList.do">기업 회원</a>
 		                                </li>
 		                                <li>
-		                                    <a href="${contextPath}/search/detail.do">매칭 승인</a>
+		                                    <a href="${contextPath}/member/matchingList.do">매칭 승인</a>
 		                                </li>
-		                                <li>
-		                                    <a href="${contextPath}/search/detail.do">1:1 문의 답변</a>
-		                                </li>
-		                                <li>
-		                                    <a href="${contextPath}/board/notice.do">공지 사항 작성</a>
-		                                </li>
+		                                
 		                            </ul>
 		                        </li>
 								<li id="line"  class="dropdown ymm-sw " data-wow-delay="0.1s">
 		                            <a href="" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">고객센터<b class="caret"></b></a>
 		                            <ul class="dropdown-menu navbar-nav">
 		                            	<li>
-		                                    <a href="${contextPath}/board/notice.do">공지사항</a>
+		                                    <a href="${contextPath}/notice/noticeList.do">공지사항</a>
 		                                </li>
 		                                <li>
 		                                    <a href="${contextPath}/board/qst_page.do">1:1문의</a>
@@ -260,7 +254,7 @@
 		                       		<a href="" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">고객센터<b class="caret"></b></a>
 			                        <ul class="dropdown-menu navbar-nav">
 			                      		<li>
-			                               <a href="${contextPath}/board/notice.do">공지사항</a>
+			                               <a href="${contextPath}/notice/noticeList.do">공지사항</a>
 			                           </li>
 			                           <li>
 			                               <a href="${contextPath}/board/qst_page.do">1:1문의</a>

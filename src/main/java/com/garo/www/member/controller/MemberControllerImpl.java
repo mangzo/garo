@@ -1,6 +1,7 @@
 package com.garo.www.member.controller;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,6 +14,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -142,6 +144,43 @@ public class MemberControllerImpl implements MemberController{
 		resEntity =new ResponseEntity(result, HttpStatus.OK);
 		return resEntity;
 	}
+
+//	일반회원용
+	@RequestMapping(value = "/profile.do", method = RequestMethod.GET)
+	public String profile(Locale locale, Model model) {
+		
+		return "/member/mypage/profile";}
+	
+	@RequestMapping(value = "/matching.do", method = RequestMethod.GET)
+	public String matching(Locale locale, Model model) {
+		
+		return "/member/mypage/matching";}
+//	기업회원용
+	@RequestMapping(value = "/cmp_profile.do", method = RequestMethod.GET)
+	public String cmp_profile(Locale locale, Model model) {
+		
+		return "/member/cmp_mypage/cmp_profile";}
+	@RequestMapping(value = "/cmp_matching.do", method = RequestMethod.GET)
+	public String cmp_matching(Locale locale, Model model) {
+		
+		return "/member/cmp_mypage/cmp_matching";}
+	
+	
+	
+	
+//관리자용	
+	@RequestMapping(value = "/companyList.do", method = RequestMethod.GET)
+	public String companyList(Locale locale, Model model) {
+		
+		return "/member/admin/companyList";}
+	@RequestMapping(value = "/memberList.do", method = RequestMethod.GET)
+	public String memberList(Locale locale, Model model) {
+		
+		return "/member/admin/memberList";}
+	@RequestMapping(value = "/matchingList.do", method = RequestMethod.GET)
+	public String matchingList(Locale locale, Model model) {
+		
+		return "/member/admin/matchingList";}
 	
 }
 
