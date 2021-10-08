@@ -35,7 +35,7 @@ function formNotice(){
             <div class="container">
                 <div class="row">
                     <div class="page-head-content">
-                        <h1 class="page-title"> <span class="pink"></span></h1>               
+                        <h1 class="page-title"> </h1>               
                     </div>
                 </div>
             </div>
@@ -113,44 +113,6 @@ function formNotice(){
 </table>
 
 
-
-
-
-<%-- <table align="center" border="1"  width="80%"  >
-  <tr height="10" align="center"  bgcolor="#FFECB4">
-     <td >글번호</td>
-     <td >작성자</td>              
-     <td >제목</td>
-     <td >작성일</td>
-  </tr>
-<c:choose>
-  <c:when test="${noticesList ==null }" >
-    <tr  height="10">
-      <td colspan="4">
-         <p align="center">
-            <b><span style="font-size:9pt;">등록된 글이 없습니다.</span></b>
-        </p>
-      </td>  
-    </tr>
-  </c:when>
-  <c:when test="${noticesList !=null }" >
-    <c:forEach  var="article" items="${noticesList }" varStatus="articleNum" >
-     
-	   <tr align="center">
-		   <td width="5%">${article.ntc_seq}</td>
-		   <td width="10%">${article.ntc_name }</td>
-		   <td align='left'  width="35%">
-		   <a class='cls1' href="${contextPath}/notice/viewNotice.do?ntc_seq=${article.ntc_seq}">${article.ntc_title }</a>		   	
-		   	
-		   	
-		   </td>
-		   <td  width="10%">
-		   	<fmt:formatDate value="${article.ntc_date}" pattern="yyyy-MM-dd" />
-		   </td> 
-	   </tr>
-    </c:forEach>
-     </c:when>
-    </c:choose> --%>
 <!-- </table> -->
 
                     </form>

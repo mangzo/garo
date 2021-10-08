@@ -81,9 +81,6 @@ public class NoticeControllerImpl implements NoticeController {
 	@RequestMapping(value = "/noticeList.do", method = RequestMethod.GET)
 	public ModelAndView listNotice(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		List<NoticeVO> noticesList = noticeService.listNotices();
-
-		System.out.println("@@@@" + noticesList.size());
-		
     	HttpSession session=request.getSession();
 		session=request.getSession();
 		//String memberInfo = (String)session.getAttribute("memberInfo");	

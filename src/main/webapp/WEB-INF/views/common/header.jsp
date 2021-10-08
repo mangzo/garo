@@ -148,7 +148,7 @@
 		                                    <a href="${contextPath}/member/cmp_profile.do">회원 정보 수정</a>
 		                                </li>
 		                                <li>
-		                                    <a href="${contextPath}/member/cmp_matching.do">매칭 현황</a>
+		                                    <a href="${contextPath}/matching/listMatching.do">매칭 현황</a>
 		                                </li>
 		                               
 		                                

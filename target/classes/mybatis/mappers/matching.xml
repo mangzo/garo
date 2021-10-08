@@ -4,12 +4,34 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="sql.matching">
+<mapper namespace="matching">
 
-	<insert id="matchingAdd" parameterType="com.garo.www.matching.vo.MatchingVO">
+
+	<select id="selectMatchingList" parameterType="com.garo.www.matching.vo.MatchingVO" resultType="com.garo.www.matching.vo.MatchingVO">
+		SELECT
+			MCH_CODE
+			, CMP_ID
+			, CUS_NAME
+			, SERVICE_DATE
+			, STATE
+			
+	
+		FROM MATCHING
+		
+		ORDER BY MCH_CODE DESC
+	</select>
+	
+	<insert id="matchingAdd" parameterType="matchingVO">
 		insert into matching(mch_code, mem_email, cmp_id, service, service_date, service_time, service_loc, etc)
 		values(seq_matching.NEXTVAL, #{mem_email}, #{cmp_id}, #{service}, #{service_date}, #{service_time}, #{service_loc}, #{etc})
 	</insert>
 
+	<select id="viewMatching" resultType="com.garo.www.matching.vo.MatchingVO" parameterType="int">
+		<![CDATA[
+		 SELECT mch_code, mem_email, cmp_id, mch_date, cus_name, service_date, service_time, service_loc, etc, state,
+		 FROM MATCHING
+		 WHERE MCH_CODE = #{mch_code} 
+		]]>
+	</select>
 
 </mapper>

@@ -6,27 +6,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 
 <c:set var="contextPath"  value="${pageContext.request.contextPath}" />
-<head>
- <meta charset="UTF-8">
- <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript">
-var sss="$memberInfo.grade";
-var goNoticeForm="${contextPath }/notice/noticeForm.do";
-/*  function formNotice(){
-	if(sss = 3){ 
-		/* alert('권한이 있습니다.');
-		location.href= goNoticeForm;
-	} else{
-		alert('작성 권한이 없습니다.');
-	}
-	
-} */
-  
-</script>
- 
-
-
-</head>
 <body>
 
 
@@ -35,17 +14,13 @@ var goNoticeForm="${contextPath }/notice/noticeForm.do";
             <div class="container">
                 <div class="row">
                     <div class="page-head-content">
-                        <h1 class="page-title"> <span class="pink"></span></h1>               
+                        <h1 class="page-title"></h1>               
                     </div>
                 </div>
             </div>
         </div>
         
-        
-        
-        
-        
-        
+ 
         <!-- End page header --> 
         <div class="content-area user-profiel" style="background-color: #FCFCFC;">&nbsp;
             <div class="container">   
@@ -62,8 +37,6 @@ var goNoticeForm="${contextPath }/notice/noticeForm.do";
                             </div>
 
 
-
-
 <table class="table">
   <thead>
     <tr>
@@ -75,39 +48,30 @@ var goNoticeForm="${contextPath }/notice/noticeForm.do";
     </tr>
   </thead>
   <c:choose>
-  <c:when test="${noticesList ==null }" >
-    <tr  height="10">
-      <td colspan="4">
-         <p align="center">
-            <b><span style="font-size:9pt;">매칭 중인 기업이 없습니다.</span></b>
-        </p>
-      </td>  
-    </tr>
-  </c:when>
-  <c:when test="${noticesList !=null }" >
-    <c:forEach  var="article" items="${noticesList }" varStatus="articleNum" >
-  
-  <tbody>
-    <tr>
-      <th scope="row">${article.mch_code}</th>
-      <td>${article.cmp_id }</td>
-     <td><fmt:formatDate value="${article.mch_date}" pattern="yyyy-MM-dd" /></td>
-      <td>${article.state}</td>
-      
-    </tr>
-   <!--  <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr> -->
-   </c:forEach>
-     </c:when>
+	  <c:when test="${matchingsList ==null }" >
+	    <tr  height="10">
+	      <td colspan="4">
+	         <p align="center">
+	            <b><span style="font-size:9pt;">매칭 중인 기업이 없습니다.</span></b>
+	        </p>
+	      </td>  
+	    </tr>
+	  </c:when>
+	  <c:when test="${matchingsList !=null }" >
+		    <c:forEach  var="articles" items="${matchingsList}" varStatus="articlesNum" >
+		  
+			  <tbody>
+			    <tr>
+			      <th scope="row">${articles.mch_code}</th>
+			     <td><a class='cls1' href="${contextPath}/matching/listMatching.do?mch_code=${articles.mch_code}">${articles.cus_name }</a></td>
+			      <td>${articles.cmp_id }</td>
+			      <td><fmt:formatDate value="${articles.service_date}" pattern="yyyy-MM-dd" /></td>
+			      <td>${articles.state}</td>
+			   
+			      
+			    </tr>
+		   </c:forEach>
+	     </c:when>
     </c:choose>
   </tbody>
 </table>
@@ -115,42 +79,6 @@ var goNoticeForm="${contextPath }/notice/noticeForm.do";
 
 
 
-
-<%-- <table align="center" border="1"  width="80%"  >
-  <tr height="10" align="center"  bgcolor="#FFECB4">
-     <td >글번호</td>
-     <td >작성자</td>              
-     <td >제목</td>
-     <td >작성일</td>
-  </tr>
-<c:choose>
-  <c:when test="${noticesList ==null }" >
-    <tr  height="10">
-      <td colspan="4">
-         <p align="center">
-            <b><span style="font-size:9pt;">등록된 글이 없습니다.</span></b>
-        </p>
-      </td>  
-    </tr>
-  </c:when>
-  <c:when test="${noticesList !=null }" >
-    <c:forEach  var="article" items="${noticesList }" varStatus="articleNum" >
-     
-	   <tr align="center">
-		   <td width="5%">${article.ntc_seq}</td>
-		   <td width="10%">${article.ntc_name }</td>
-		   <td align='left'  width="35%">
-		   <a class='cls1' href="${contextPath}/notice/viewNotice.do?ntc_seq=${article.ntc_seq}">${article.ntc_title }</a>		   	
-		   	
-		   	
-		   </td>
-		   <td  width="10%">
-		   	<fmt:formatDate value="${article.ntc_date}" pattern="yyyy-MM-dd" />
-		   </td> 
-	   </tr>
-    </c:forEach>
-     </c:when>
-    </c:choose> --%>
 <!-- </table> -->
 
                     </form>

@@ -160,10 +160,7 @@ public class MemberControllerImpl implements MemberController{
 	public String cmp_profile(Locale locale, Model model) {
 		
 		return "/member/cmp_mypage/cmp_profile";}
-	@RequestMapping(value = "/cmp_matching.do", method = RequestMethod.GET)
-	public String cmp_matching(Locale locale, Model model) {
-		
-		return "/member/cmp_mypage/cmp_matching";}
+
 	
 	
 	

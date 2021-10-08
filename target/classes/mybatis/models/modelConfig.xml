@@ -4,9 +4,10 @@
 
 <configuration>
   <typeAliases>
-    <typeAlias type="com.garo.www.goods.vo.GoodsVO" alias="goodsVO" />
     <typeAlias type="com.garo.www.goods.vo.ImageFileVO" alias="imageFileVO" />
     <typeAlias type="com.garo.www.member.vo.MemberVO" alias="memberVO" />
     <typeAlias type="com.garo.www.company.vo.CompanyVO" alias="companyVO" />
+    <typeAlias type="com.garo.www.matching.vo.MatchingVO" alias="matchingVO" />
+    <typeAlias type="com.garo.www.notice.vo.NoticeVO" alias="noticeVO" />
   </typeAliases>
 </configuration>

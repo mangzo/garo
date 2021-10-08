@@ -24,31 +24,35 @@ public class MatchingDAOImpl  implements MatchingDAO{
 
 	@Override
 	public void insertNewMatching(MatchingVO vo) throws DataAccessException{
-		System.out.println("@@@DAOImpl");
 		sqlSession.insert("matching.insertNewMatching",vo);
 	}
 	 
 	@Override
 	public List<MatchingVO> selectList() throws DataAccessException {
 		return sqlSession.selectList("matching.selectMatchingList");
+		
 	}
 	public int emailConfirm(String mem_id) throws DataAccessException {
 		return sqlSession.selectOne("matching.emailConfirm", mem_id);
 	}
-	@Override
-	public String selectOverlappedID(String mem_id) throws DataAccessException {
-		return sqlSession.selectOne("matching.selectOverlappedID",mem_id);
-	}
+	/*
+	 * @Override public String selectOverlappedID(String mem_id) throws
+	 * DataAccessException { return
+	 * sqlSession.selectOne("matching.selectOverlappedID",mem_id); }
+	 */
 	
-	private int selectNewntc_seq() throws DataAccessException {
-		return sqlSession.selectOne("matching.insertNewntc_seq");
-	} 
+	/*
+	 * private int selectNewntc_seq() throws DataAccessException { return
+	 * sqlSession.selectOne("matching.insertNewntc_seq"); }
+	 */
 	
-	@Override
-	public void updateMatching(MatchingVO matchingVO) throws DataAccessException {
-		sqlSession.update("matching.updateMatching", matchingVO);
-		
-	}
+	/*
+	 * @Override public void updateMatching(MatchingVO matchingVO) throws
+	 * DataAccessException { sqlSession.update("matching.updateMatching",
+	 * matchingVO);
+	 * 
+	 * }
+	 */
 	
 	@Override
 	public void deleteMatching(MatchingVO matchingVO) throws DataAccessException {
@@ -56,8 +60,8 @@ public class MatchingDAOImpl  implements MatchingDAO{
 	}
 	
 	@Override
-	public MatchingVO viewMatching(int ntc_seq) throws DataAccessException {
-		return sqlSession.selectOne("matching.viewMatching", ntc_seq);
+	public MatchingVO viewMatching(int mch_code) throws DataAccessException {
+		return sqlSession.selectOne("matching.viewMatching", mch_code);
 	}
 }
 
