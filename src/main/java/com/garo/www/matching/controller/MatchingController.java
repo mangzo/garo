@@ -16,5 +16,7 @@ public interface MatchingController {
 	public ModelAndView listMatching(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ResponseEntity addMatching(@ModelAttribute("matching") MatchingVO matching, HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView viewMatching(MatchingVO matchingVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
-
+	public ResponseEntity refuseMatching(MatchingVO matchingVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
+	public ResponseEntity acceptMatching(MatchingVO matchingVO, HttpServletRequest request, HttpServletResponse response) throws Exception;
+	
 }

@@ -48,4 +48,16 @@ public class MatchingServiceImpl implements MatchingService {
 	public MatchingVO viewMatching(int mch_code) throws Exception{
 		return matchingDAO.viewMatching(mch_code);
 	}
+	
+	@Override
+	public void refuseMatching(MatchingVO matchingVO) throws Exception{
+		matchingDAO.refuseMatching(matchingVO);
+	}
+	
+	@Override
+	public void acceptMatching(MatchingVO matchingVO) throws Exception{
+		matchingDAO.acceptMatching(matchingVO);
+	}
+	
+	
 }

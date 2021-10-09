@@ -28,9 +28,27 @@
 
 	<select id="viewMatching" resultType="com.garo.www.matching.vo.MatchingVO" parameterType="int">
 		<![CDATA[
-		 SELECT mch_code, mem_email, cmp_id, mch_date, cus_name, service_date, service_time, service_loc, etc, state,
+		 SELECT mch_code, mem_email, cmp_id, mch_date, cus_name, service_date, service_time, service_loc, etc, state
 		 FROM MATCHING
 		 WHERE MCH_CODE = #{mch_code} 
+		]]>
+	</select>
+	
+	<select id="refuseMatching" resultType="com.garo.www.matching.vo.MatchingVO" parameterType="com.garo.www.matching.vo.MatchingVO">
+		<![CDATA[
+			UPDATE MATCHING
+			SET state ='매칭 거부됨'
+			WHERE MCH_CODE = #{mch_code}
+			
+		]]>
+	</select>
+	
+	<select id="acceptMatching" resultType="com.garo.www.matching.vo.MatchingVO" parameterType="com.garo.www.matching.vo.MatchingVO">
+		<![CDATA[
+			UPDATE MATCHING
+			SET state ='매칭 완료됨'
+			WHERE MCH_CODE = #{mch_code}
+			
 		]]>
 	</select>
 

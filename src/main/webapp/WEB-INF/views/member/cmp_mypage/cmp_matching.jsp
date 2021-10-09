@@ -63,7 +63,7 @@
 			  <tbody>
 			    <tr>
 			      <th scope="row">${articles.mch_code}</th>
-			     <td><a class='cls1' href="${contextPath}/matching/listMatching.do?mch_code=${articles.mch_code}">${articles.cus_name }</a></td>
+			     <td><a class='cls1' href="${contextPath}/matching/viewMatching.do?mch_code=${articles.mch_code}">${articles.cus_name }</a></td>
 			      <td>${articles.cmp_id }</td>
 			      <td><fmt:formatDate value="${articles.service_date}" pattern="yyyy-MM-dd" /></td>
 			      <td>${articles.state}</td>

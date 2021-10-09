@@ -1,6 +1,7 @@
 package com.garo.www.matching.vo;
 
 import java.util.Date;
+
 import org.springframework.stereotype.Component;
 
 @Component("matchingVO")
@@ -16,6 +17,13 @@ public class MatchingVO {
 	private String service_time; //서비스 몇 시에?
 	private String service_loc; //고객 지역
 	private String etc; //기타 추가사항
+	private String service;
+	public String getService() {
+		return service;
+	}
+	public void setService(String service) {
+		this.service = service;
+	}
 	public int getMch_code() {
 		return mch_code;
 	}

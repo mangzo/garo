@@ -15,6 +15,8 @@ public interface MatchingDAO {
 	//public int emailConfirm(String id) throws DataAccessException;
 	//public void updateMatching(MatchingVO matchingVO) throws DataAccessException;
 	public void deleteMatching(MatchingVO matchingVO) throws DataAccessException;
-	public MatchingVO viewMatching(int ntc_seq) throws DataAccessException;
+	public MatchingVO viewMatching(int mch_code) throws DataAccessException;
+	public void refuseMatching(MatchingVO vo) throws DataAccessException;
+	public void acceptMatching(MatchingVO vo) throws DataAccessException;
 
 }

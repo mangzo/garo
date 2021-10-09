@@ -35,6 +35,13 @@ public class MatchingDAOImpl  implements MatchingDAO{
 	public int emailConfirm(String mem_id) throws DataAccessException {
 		return sqlSession.selectOne("matching.emailConfirm", mem_id);
 	}
+	
+	public void refuseMatching(MatchingVO vo) throws DataAccessException{
+		sqlSession.update("matching.refuseMatching",vo);
+	}
+	public void acceptMatching(MatchingVO vo) throws DataAccessException{
+		sqlSession.update("matching.acceptMatching",vo);
+	}
 	/*
 	 * @Override public String selectOverlappedID(String mem_id) throws
 	 * DataAccessException { return

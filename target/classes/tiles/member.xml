@@ -36,6 +36,11 @@
          <put-attribute name="body" value="/WEB-INF/views/member/cmp_mypage/cmp_matching.jsp" />
       </definition>
       
+      <definition name="/matching/viewMatching" extends="baseLayout">
+      	<put-attribute name="title" value="기업 매칭 상세보기 페이지" />
+      	<put-attribute name="body" value="/WEB-INF/views/member/cmp_mypage/cmp_viewmatching.jsp" />
+      </definition>
+      
       <!-- 관리자용 -->
       
       <definition name="/member/admin/companyList" extends="baseLayout">
@@ -51,6 +56,7 @@
          <put-attribute name="body" value="/WEB-INF/views/member/admin/matchingList.jsp" />
       </definition>
       
+     
       
 </tiles-definitions>
 
