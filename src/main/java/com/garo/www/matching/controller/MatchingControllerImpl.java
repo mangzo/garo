@@ -32,20 +32,7 @@ public class MatchingControllerImpl implements MatchingController {
 
 	@RequestMapping(value = "/matchingRequest.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView matchingRequest(MatchingVO matchingVO, HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println(matchingVO.getMch_code());
-		System.out.println(matchingVO.getService());
-		System.out.println(matchingVO.getMch_date());
-		System.out.println(matchingVO.getState());
-		System.out.println(matchingVO.getCus_name());
-		System.out.println(matchingVO.getService_date());
-		System.out.println(matchingVO.getService_time());
-		System.out.println(matchingVO.getService_loc());
-		System.out.println(matchingVO.getEtc());
-		System.out.println(matchingVO.getComp_date());
-		// ResponseEntity로 메세지 처리 해야함.
-		
-		System.out.println("-----------------------");
-		
+
 		ModelAndView mav = new ModelAndView();
 		
 		matchingService.matchingRequest(matchingVO);
