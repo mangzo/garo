@@ -18,5 +18,6 @@ public interface MatchingDAO {
 	public MatchingVO viewMatching(int mch_code) throws DataAccessException;
 	public void refuseMatching(MatchingVO vo) throws DataAccessException;
 	public void acceptMatching(MatchingVO vo) throws DataAccessException;
+	public void matchingRequest(MatchingVO matchingVO) throws Exception;
 
 }

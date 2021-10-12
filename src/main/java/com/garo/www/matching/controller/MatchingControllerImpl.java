@@ -30,36 +30,61 @@ public class MatchingControllerImpl implements MatchingController {
 	@Autowired
 	private MemberVO memberVO;
 
-	@Override
+	@RequestMapping(value = "/matchingRequest.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView matchingRequest(MatchingVO matchingVO, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		System.out.println(matchingVO.getMch_code());
+		System.out.println(matchingVO.getService());
+		System.out.println(matchingVO.getMch_date());
+		System.out.println(matchingVO.getState());
+		System.out.println(matchingVO.getCus_name());
+		System.out.println(matchingVO.getService_date());
+		System.out.println(matchingVO.getService_time());
+		System.out.println(matchingVO.getService_loc());
+		System.out.println(matchingVO.getEtc());
+		System.out.println(matchingVO.getComp_date());
+		// ResponseEntity로 메세지 처리 해야함.
+		
+		System.out.println("-----------------------");
+		
+		ModelAndView mav = new ModelAndView();
+		
+		matchingService.matchingRequest(matchingVO);
+		mav.setViewName("home");
 
-	@RequestMapping(value = "/addMatching.do", method = RequestMethod.POST)
-	public ResponseEntity addMatching(@ModelAttribute("matchingVO") MatchingVO vo, HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-
-		String message = null;
-		ResponseEntity resEntity = null;
-		HttpHeaders responseHeaders = new HttpHeaders();
-		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
-
-		System.out.println("매칭에드어따쓰는거지?");
-		// System.out.println(vo.getNtc_name());
-		// System.out.println(vo.getNtc_title()); //
-
-		try {
-			matchingService.addMatching(vo);
-			message = "<script>";
-			message += " alert('정상적으로 등록되었습니다.');";
-			message += " location.href='" + request.getContextPath() + "/matching/listMatching';";
-			message += " </script>";
-
-		} catch (Exception e) {
-
-			e.printStackTrace();
-		}
-		resEntity = new ResponseEntity(message, responseHeaders, HttpStatus.OK);
-		System.out.println("------------add--------------" + resEntity);
-		return resEntity;
+		
+		
+		return mav;
 	}
+//	@Override
+//
+//	@RequestMapping(value = "/addMatching.do", method = RequestMethod.POST)
+//	public ResponseEntity addMatching(@ModelAttribute("matchingVO") MatchingVO vo, HttpServletRequest request,
+//			HttpServletResponse response) throws Exception {
+//
+//		String message = null;
+//		ResponseEntity resEntity = null;
+//		HttpHeaders responseHeaders = new HttpHeaders();
+//		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+//
+//		System.out.println("매칭에드어따쓰는거지?");
+//		// System.out.println(vo.getNtc_name());
+//		// System.out.println(vo.getNtc_title()); //
+//
+//		try {
+//			matchingService.addMatching(vo);
+//			message = "<script>";
+//			message += " alert('정상적으로 등록되었습니다.');";
+//			message += " location.href='" + request.getContextPath() + "/matching/listMatching';";
+//			message += " </script>";
+//
+//		} catch (Exception e) {
+//
+//			e.printStackTrace();
+//		}
+//		resEntity = new ResponseEntity(message, responseHeaders, HttpStatus.OK);
+//		System.out.println("------------add--------------" + resEntity);
+//		return resEntity;
+//	}
 
 	// 공지사항 작성 화면
 	/*

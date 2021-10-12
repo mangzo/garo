@@ -20,6 +20,12 @@ public class MatchingDAOImpl  implements MatchingDAO{
 		MatchingVO matching=(MatchingVO)sqlSession.selectOne("matching.login",loginMap);
 	   return matching;
 	}
+	@Override
+	public void matchingRequest(MatchingVO matchingVO) throws Exception {
+		// TODO Auto-generated method stub
+		
+		sqlSession.insert("matching.matchingAdd", matchingVO);
+	}
 	
 
 	@Override

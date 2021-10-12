@@ -6,6 +6,11 @@
 
 <mapper namespace="matching">
 
+	<insert id="matchingAdd" parameterType="com.garo.www.matching.vo.MatchingVO">
+		insert into matching(mch_code, mem_email, cmp_id, service, service_date, service_time, service_loc, etc)
+		values(seq_matching.NEXTVAL, #{mem_email}, #{cmp_id}, #{service}, #{service_date}, #{service_time}, #{service_loc}, #{etc})
+	</insert>
+
 
 	<select id="selectMatchingList" parameterType="com.garo.www.matching.vo.MatchingVO" resultType="com.garo.www.matching.vo.MatchingVO">
 		SELECT
@@ -21,11 +26,6 @@
 		ORDER BY MCH_CODE DESC
 	</select>
 	
-	<insert id="matchingAdd" parameterType="matchingVO">
-		insert into matching(mch_code, mem_email, cmp_id, service, service_date, service_time, service_loc, etc)
-		values(seq_matching.NEXTVAL, #{mem_email}, #{cmp_id}, #{service}, #{service_date}, #{service_time}, #{service_loc}, #{etc})
-	</insert>
-
 	<select id="viewMatching" resultType="com.garo.www.matching.vo.MatchingVO" parameterType="int">
 		<![CDATA[
 		 SELECT mch_code, mem_email, cmp_id, mch_date, cus_name, service_date, service_time, service_loc, etc, state

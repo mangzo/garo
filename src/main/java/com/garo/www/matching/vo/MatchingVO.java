@@ -10,14 +10,16 @@ public class MatchingVO {
 	private int mch_code; //매칭 번호
 	private String mem_email; //고객 이메일
 	private String cmp_id; //회사명 - ★
-	private Date mch_date; //매칭 원하는 날짜 - ★
+	private String mch_date; //매칭 원하는 날짜 - ★
 	private String state; //매칭 현황 ex)대기중,승낙,거부 - ★
 	private String cus_name; //고객 이름 - ★
-	private Date service_date; 
+	private String service_date; 
 	private String service_time; //서비스 몇 시에?
 	private String service_loc; //고객 지역
 	private String etc; //기타 추가사항
+	private String comp_date;
 	private String service;
+
 	public String getService() {
 		return service;
 	}
@@ -43,10 +45,10 @@ public class MatchingVO {
 	public void setCmp_id(String cmp_id) {
 		this.cmp_id = cmp_id;
 	}
-	public Date getMch_date() {
+	public String getMch_date() {
 		return mch_date;
 	}
-	public void setMch_date(Date mch_date) {
+	public void setMch_date(String mch_date) {
 		this.mch_date = mch_date;
 	}
 	public String getState() {
@@ -61,10 +63,10 @@ public class MatchingVO {
 	public void setCus_name(String cus_name) {
 		this.cus_name = cus_name;
 	}
-	public Date getService_date() {
+	public String getService_date() {
 		return service_date;
 	}
-	public void setService_date(Date service_date) {
+	public void setService_date(String service_date) {
 		this.service_date = service_date;
 	}
 	public String getService_time() {
@@ -85,13 +87,13 @@ public class MatchingVO {
 	public void setEtc(String etc) {
 		this.etc = etc;
 	}
-	public Date getComp_date() {
+	public String getComp_date() {
 		return comp_date;
 	}
-	public void setComp_date(Date comp_date) {
+	public void setComp_date(String comp_date) {
 		this.comp_date = comp_date;
 	}
-	private Date comp_date; //뭔지 모르고 들어가지도 않음~
+
 	
 	
 

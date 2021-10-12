@@ -19,4 +19,5 @@ public interface MatchingService {
 	public void removeMatching(MatchingVO matchingVO) throws Exception;
 	public void refuseMatching(MatchingVO matchingVO) throws Exception;
 	public void acceptMatching(MatchingVO matchingVO) throws Exception;
+	public void matchingRequest(MatchingVO matchingVO) throws Exception;
 }

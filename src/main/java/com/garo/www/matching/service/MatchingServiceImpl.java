@@ -21,6 +21,14 @@ public class MatchingServiceImpl implements MatchingService {
 	public MatchingVO login(Map loginMap) throws Exception{
 		return matchingDAO.login(loginMap);
 	}
+	@Override
+	public void matchingRequest(MatchingVO matchingVO) throws Exception {
+		// TODO Auto-generated method stub
+		
+		matchingDAO.matchingRequest(matchingVO);
+		
+		
+	}
 	
 	@Override
 	public void addMatching(MatchingVO matchingVO) throws Exception{
